@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/sype.css" />
+        <title>Medecin</title>
+    </h:head>
+    <h:body>
+         <nav class="navbar navbar-inverse">
+            
+            <div class="container-fluid">
+                
+                <ul class="nav navbar-nav">
+                    <li>
+                        <h:form>
+                            <h:commandLink value="Patient" action="listepatient.xhtml" class="navbar-brand"></h:commandLink>
+                            <h:commandLink value="Medecin" action="listemedecin.xhtml" class="navbar-brand"></h:commandLink>
+                            <h:commandLink value="Medicament" action="listemedicament.xhtml" class="navbar-brand"></h:commandLink>
+                            <h:commandLink value="Consultation" action="listeconsultation.xhtml" class="navbar-brand"></h:commandLink>
+                            <h:commandLink value="Prescrire" action="presincription.xhtml" class="navbar-brand"></h:commandLink>
+                        </h:form>
+                    </li>
+                </ul>
+                
+            </div>
+            
+        </nav>
+        
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 spacer container">
+                <h:form>
+                     <h:commandButton value="Liste" action="listemedecin.xhtml" class="btn btn-danger btn-sm"></h:commandButton>
+                </h:form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+        <div class="container spacer left col-md-4 ">
+            <h:form>
+            <div class="panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>Nouveau</h4></div>
+                </div>
+                
+                 <div class="panel-body">
+                    <div class="form-group">
+                        <h:outputLabel value="Matricule"></h:outputLabel>
+                        <h:inputText value="#{medecin.matricule}" class="form-control" id="matricule" title="Entrer Matricule"  required="true" requiredMessage="Matricule Obligatiore"></h:inputText>
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel value="Nom Complet"></h:outputLabel>
+                        <h:inputText value="#{medecin.name}" class="form-control" id="name" title="le nom complet"  required="true" requiredMessage="Nom est Obligatoire"></h:inputText>
+                    </div>
+                     <div class="form-group">
+                         <h:commandButton value="Enregistrer" action="#{medecin.enregistrer()}" class="btn btn-info"></h:commandButton>
+                     </div>
+                </div>
+                
+               
+            </div>
+              </h:form>
+        </div>
+        </div>
+        
+    </h:body>
+</html>
+

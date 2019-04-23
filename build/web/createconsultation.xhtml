@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/sype.css" />
+        <title>Consultation</title>
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-inverse">
+            
+            <div class="container-fluid">
+                
+                <ul class="nav navbar-nav">
+                    <li>
+                        <h:form>
+                            <h:commandLink value="Patient" action="listepatient.xhtml" class="navbar-brand"></h:commandLink>
+                            <h:commandLink value="Medecin" action="listemedecin.xhtml" class="navbar-brand"></h:commandLink>
+                            <h:commandLink value="Medicament" action="listemedicament.xhtml" class="navbar-brand"></h:commandLink>
+                            <h:commandLink value="Consultation" action="listeconsultation.xhtml" class="navbar-brand"></h:commandLink>
+                            <h:commandLink value="Prescrire" action="presincription.xhtml" class="navbar-brand"></h:commandLink>
+                        </h:form>
+                    </li>
+                </ul>
+                
+            </div>
+            
+        </nav>
+       <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 spacer container">
+                <h:form>
+                     <h:commandButton value="Liste" action="listeconsultation.xhtml" class="btn btn-danger btn-sm"></h:commandButton>
+                </h:form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+        <div class="container spacer left col-md-4 ">
+            <h:form>
+            <div class="panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title"><h4>Nouveau</h4></div>
+                </div>
+                
+                 <div class="panel-body">
+                     
+                    <div class="form-group">
+                        <h:outputLabel value="Medecin"></h:outputLabel>
+                        <h:selectOneMenu id="matricule_medecin" value="#{consultation.matricule_medecin}" class="form-control">
+                            <f:selectItems value="#{medecin.listmatri}"/>
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel value="Patient"></h:outputLabel>
+                        <h:selectOneMenu id="noss_patient" value="#{consultation.noss_patient}" class="form-control">
+                            <f:selectItems value="#{patient.listno_ss}"/>
+                        </h:selectOneMenu>
+                    </div>
+                     
+                     <div class="form-group">
+                        <h:outputLabel value="Date"></h:outputLabel>
+                        <h:inputText  value="#{consultation.date}" class="form-control" id="date" title="Date"  required="true" requiredMessage="Date Obligatiore">
+                             
+                        </h:inputText>
+                    </div>
+                     <div class="form-group">
+                         <h:commandButton value="Enregistrer" action="#{consultation.enregistrer()}" class="btn btn-info"></h:commandButton>
+                     </div>
+                </div>
+                
+               
+            </div>
+              </h:form>
+        </div>
+        </div>
+    </h:body>
+</html>
+
